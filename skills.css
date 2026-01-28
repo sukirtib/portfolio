@@ -1,0 +1,75 @@
+/* Skills section container */
+#skills {
+    padding: 80px 40px;
+}
+
+/* Skill boxes wrapper */
+.skill__box {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Each skill row */
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Skill name */
+.skill > span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill > span::after {
+    content: attr(data-percent);
+    font-weight: 700;
+    color: #2c98f0;
+}
+
+/* Progress bar background */
+.skill__percent__box {
+    width: 100%;
+    height: 8px;
+    background: #e6e6e6;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Progress bar fill */
+.skill__percent {
+    height: 100%;
+    width: 0; /* Will be set inline */
+    background: #2c98f0;
+    border-radius: 20px;
+    position: relative;
+    transition: width 1.5s ease;
+}
+
+/* Percentage text inside bar (hidden) */
+.skill__percent span {
+    display: none;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 768px) {
+    .skill__box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #skills {
+        padding: 60px 20px;
+    }
+}
